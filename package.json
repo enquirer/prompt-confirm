@@ -1,0 +1,53 @@
+{
+  "name": "enquirer-prompt-confirm",
+  "description": "Confirm prompt plugin for Enquirer.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/enquirer-prompt-confirm",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/enquirer-prompt-confirm",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/enquirer-prompt-confirm/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "ansi-cyan": "^0.1.1"
+  },
+  "keywords": [
+    "answer",
+    "answers",
+    "ask",
+    "checkbox",
+    "choice",
+    "cli",
+    "command",
+    "enquirerprompt",
+    "input",
+    "inquire",
+    "inquirer",
+    "interact",
+    "list",
+    "menu",
+    "password",
+    "prompt",
+    "prompts",
+    "question",
+    "readline",
+    "stdin",
+    "stdout",
+    "terminal",
+    "tty",
+    "ui"
+  ]
+}
