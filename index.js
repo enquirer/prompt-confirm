@@ -3,15 +3,15 @@
  */
 
 var util = require('util');
-var BasePrompt = require('enquirer-prompt');
+var Prompt = require('enquirer-prompt');
 var cyan = require('ansi-cyan');
 
 /**
- * Constructor
+ * Create a `Confirm` question with the given `
  */
 
-function Prompt(question, rl, answers) {
-  BasePrompt.apply(this, arguments);
+function Confirm(/*question, answers, rl*/) {
+  Prompt.apply(this, arguments);
   var initialDefault = true;
 
   if (typeof this.question.default === 'boolean') {
@@ -27,18 +27,18 @@ function Prompt(question, rl, answers) {
 }
 
 /**
- * Inherit `BasePrompt`
+ * Inherit `Prompt`
  */
 
-util.inherits(Prompt, BasePrompt);
+util.inherits(Confirm, Prompt);
 
 /**
  * Start the prompt session
  * @param  {Function} `cb` Callback when prompt is finished
- * @return {Object} Returns the `Prompt` instance
+ * @return {Object} Returns the `Confirm` instance
  */
 
-Prompt.prototype.ask = function(cb) {
+Confirm.prototype.ask = function(cb) {
   this.callback = cb;
   this.ui.on('keypress', this.onKeypress.bind(this));
   this.ui.once('line', this.onSubmit.bind(this));
@@ -50,7 +50,7 @@ Prompt.prototype.ask = function(cb) {
  * Render the prompt to the terminal
  */
 
-Prompt.prototype.render = function(answer) {
+Confirm.prototype.render = function(answer) {
   var message = this.message;
   if (typeof answer === 'boolean') {
     message += cyan(answer ? 'Yes' : 'No');
@@ -64,7 +64,7 @@ Prompt.prototype.render = function(answer) {
  * When user press `enter` key
  */
 
-Prompt.prototype.onSubmit = function(answer) {
+Confirm.prototype.onSubmit = function(answer) {
   this.answer = this.filterFn(answer);
   this.status = 'answered';
   this.render(this.answer);
@@ -76,7 +76,7 @@ Prompt.prototype.onSubmit = function(answer) {
  * When user press a key
  */
 
-Prompt.prototype.onKeypress = function() {
+Confirm.prototype.onKeypress = function() {
   this.render();
 };
 
@@ -102,4 +102,4 @@ function isTrue(str) {
  * Module exports
  */
 
-module.exports = Prompt;
+module.exports = Confirm;
