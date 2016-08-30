@@ -1,12 +1,12 @@
 {
   "name": "enquirer-prompt-confirm",
-  "description": "Confirm prompt plugin for Enquirer.",
+  "description": "Adds `confirm` (yes/no) prompt support to Enquirer.",
   "version": "0.1.0",
-  "homepage": "https://github.com/jonschlinkert/enquirer-prompt-confirm",
+  "homepage": "https://github.com/enquirer/enquirer-prompt-confirm",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "jonschlinkert/enquirer-prompt-confirm",
+  "repository": "enquirer/enquirer-prompt-confirm",
   "bugs": {
-    "url": "https://github.com/jonschlinkert/enquirer-prompt-confirm/issues"
+    "url": "https://github.com/enquirer/enquirer-prompt-confirm/issues"
   },
   "license": "MIT",
   "files": [
@@ -22,7 +22,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "ansi-cyan": "^0.1.1"
+    "ansi-cyan": "^0.1.1",
+    "enquirer-prompt": "^0.2.1"
+  },
+  "devDependencies": {
+    "enquirer": "^0.1.3",
+    "gulp-format-md": "^0.1.10"
   },
   "keywords": [
     "answer",
@@ -32,6 +37,8 @@
     "choice",
     "cli",
     "command",
+    "confirm",
+    "enquirer",
     "enquirerprompt",
     "input",
     "inquire",
@@ -49,5 +56,34 @@
     "terminal",
     "tty",
     "ui"
-  ]
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "common-minimal",
+    "data": {
+      "alias": "confirm"
+    },
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "enquirer",
+        "enquirer-prompt",
+        "enquirer-prompt-checkbox",
+        "enquirer-prompt-radio"
+      ]
+    },
+    "reflinks": [
+      "enquirer",
+      "verb",
+      "verb-generate-readme"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
 }
