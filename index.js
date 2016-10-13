@@ -7,7 +7,7 @@ var Prompt = require('prompt-base');
 var cyan = require('ansi-cyan');
 
 /**
- * Create a `Confirm` question with the given `
+ * Create a new `Confirm` prompt, with the given `question`.
  */
 
 function Confirm(/*question, answers, rl*/) {
@@ -17,7 +17,6 @@ function Confirm(/*question, answers, rl*/) {
   if (typeof this.question.default === 'boolean') {
     defaultValue = this.question.default;
   }
-
   this.question.default = defaultValue ? 'Y/n' : 'y/N';
   return this;
 }
@@ -57,7 +56,7 @@ Confirm.prototype.onSubmit = function(input) {
  */
 
 Confirm.prototype.getAnswer = function(input) {
-  return isString(input) ? isTrue(input) : this.question.default;
+  return !!(isString(input) ? isTrue(input) : this.question.default);
 };
 
 /**

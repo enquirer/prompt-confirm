@@ -1,15 +1,14 @@
-# enquirer-prompt-confirm [![NPM version](https://img.shields.io/npm/v/enquirer-prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/enquirer-prompt-confirm) [![NPM downloads](https://img.shields.io/npm/dm/enquirer-prompt-confirm.svg?style=flat)](https://npmjs.org/package/enquirer-prompt-confirm)
+# prompt-confirm [![NPM version](https://img.shields.io/npm/v/prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/prompt-confirm) [![NPM downloads](https://img.shields.io/npm/dm/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm) 
 
-> Adds `confirm` (yes/no) prompt support to Enquirer.
+> Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].
 
-![confirm prompt example](https://raw.githubusercontent.com/enquirer/enquirer-prompt-confirm/master/example.gif)
+![prompt-confirm example](https://raw.githubusercontent.com/enquirer/prompt-confirm/master/example.gif)
 
 ## Install
-
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install --save enquirer-prompt-confirm
+$ npm install --save prompt-confirm
 ```
 
 ## Usage
@@ -18,12 +17,12 @@ $ npm install --save enquirer-prompt-confirm
 var Enquirer = require('enquirer');
 var enquirer = new Enquirer();
 
-enquirer.register('confirm', require('enquirer-prompt-confirm'));
+enquirer.register('confirm', require('prompt-confirm'));
 ```
 
 ## Example
 
-[Enquirer](https://github.com/jonschlinkert/enquirer) supports both the declarative inquirer-style question format and a functional format using the `.question` method:
+[Enquirer][] supports both the declarative inquirer-style question format and a functional format using the `.question` method:
 
 **Single question**
 
@@ -33,7 +32,7 @@ Ask one question using the `.prompt` method:
 var Enquirer = require('enquirer');
 var enquirer = new Enquirer();
 
-enquirer.register('checkbox', require('enquirer-prompt-confirm'));
+enquirer.register('checkbox', require('prompt-confirm'));
 
 enquirer.question('chocolate', 'Like chocolate?', {type: 'confirm'});
 enquirer.question('vanilla', 'Like vanilla?', {type: 'confirm'});
@@ -52,7 +51,7 @@ Functional style questions.
 var Enquirer = require('enquirer');
 var enquirer = new Enquirer();
 
-enquirer.register('checkbox', require('enquirer-prompt-confirm'));
+enquirer.register('checkbox', require('prompt-confirm'));
 
 enquirer.question('chocolate', 'Like chocolate?', {type: 'confirm'});
 enquirer.question('vanilla', 'Like vanilla?', {type: 'confirm'});
@@ -71,7 +70,7 @@ Inquirer-style questions format.
 var Enquirer = require('enquirer');
 var enquirer = new Enquirer();
 
-enquirer.register('checkbox', require('enquirer-prompt-confirm'));
+enquirer.register('checkbox', require('prompt-confirm'));
 
 var questions = [
   {type: 'confirm', name: 'chocolate', message: 'Like chocolate?'},
@@ -89,16 +88,13 @@ enquirer.ask(questions)
 Based on the `confirm` prompt in inquirer.
 
 ## About
-
 ### Related projects
-
-* [enquirer-prompt-checkbox](https://www.npmjs.com/package/enquirer-prompt-checkbox): Adds checkbox prompt support to Enquirer. | [homepage](https://github.com/enquirer/enquirer-prompt-checkbox "Adds checkbox prompt support to Enquirer.")
-* [enquirer-prompt-radio](https://www.npmjs.com/package/enquirer-prompt-radio): Adds `radio` prompt support to Enquirer. This prompt behaves like other radio-button interfaces, where only… [more](https://github.com/enquirer/enquirer-prompt-radio) | [homepage](https://github.com/enquirer/enquirer-prompt-radio "Adds `radio` prompt support to Enquirer. This prompt behaves like other radio-button interfaces, where only one choice is enabled whilst all others are disabled.")
-* [enquirer-prompt](https://www.npmjs.com/package/enquirer-prompt): Base prompt module used for creating custom prompt types for Enquirer. | [homepage](https://github.com/enquirer/enquirer-prompt "Base prompt module used for creating custom prompt types for Enquirer.")
-* [enquirer](https://www.npmjs.com/package/enquirer): Plugin-based prompt system for node.js | [homepage](https://github.com/jonschlinkert/enquirer "Plugin-based prompt system for node.js")
+- [enquirer-prompt](https://www.npmjs.com/package/enquirer-prompt): Base prompt module used for creating custom prompt types for Enquirer. | [homepage](https://github.com/jonschlinkert/enquirer-prompt "Base prompt module used for creating custom prompt types for Enquirer.")
+- [enquirer](https://www.npmjs.com/package/enquirer): Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all… [more](https://github.com/enquirer/enquirer) | [homepage](https://github.com/enquirer/enquirer "Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all the same prompt types and more, but without the bloat.")
+- [prompt-checkbox](https://www.npmjs.com/package/prompt-checkbox): Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer]. | [homepage](https://github.com/enquirer/prompt-checkbox "Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer].")
+- [prompt-radio](https://www.npmjs.com/package/prompt-radio): Radio prompt. This prompt behaves like other radio-button interfaces, where only one choice is enabled… [more](https://github.com/enquirer/prompt-radio) | [homepage](https://github.com/enquirer/prompt-radio "Radio prompt. This prompt behaves like other radio-button interfaces, where only one choice is enabled whilst all others are disabled. Can be used as a standalone prompt, or with a prompt system like [Enquirer].")
 
 ### Contributing
-
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
 
 ### Running tests
@@ -110,17 +106,19 @@ $ npm install -d && npm test
 ```
 
 ### Author
-
 **Jon Schlinkert**
 
-* [github/jonschlinkert](https://github.com/jonschlinkert)
-* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
++ [github/jonschlinkert](https://github.com/jonschlinkert)
++ [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
 
 ### License
-
 Copyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).
-Released under the [MIT license](https://github.com/enquirer/enquirer-prompt-confirm/blob/master/LICENSE).
+Released under the [MIT license](https://github.com/enquirer/prompt-confirm/blob/master/LICENSE).
 
 ***
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.1.30, on August 30, 2016._
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.1.31, on October 13, 2016._
+
+[enquirer]: https://github.com/enquirer/enquirer
+[verb-generate-readme]: https://github.com/verbose/verb-generate-readme
+[verb]: https://github.com/verbose/verb
