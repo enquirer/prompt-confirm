@@ -1,12 +1,12 @@
 {
-  "name": "enquirer-prompt-confirm",
-  "description": "Adds `confirm` (yes/no) prompt support to Enquirer.",
+  "name": "prompt-confirm",
+  "description": "Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].",
   "version": "0.1.1",
-  "homepage": "https://github.com/enquirer/enquirer-prompt-confirm",
+  "homepage": "https://github.com/enquirer/prompt-confirm",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "enquirer/enquirer-prompt-confirm",
+  "repository": "enquirer/prompt-confirm",
   "bugs": {
-    "url": "https://github.com/enquirer/enquirer-prompt-confirm/issues"
+    "url": "https://github.com/enquirer/prompt-confirm/issues"
   },
   "license": "MIT",
   "files": [
@@ -23,10 +23,10 @@
   },
   "dependencies": {
     "ansi-cyan": "^0.1.1",
-    "enquirer-prompt": "^0.2.1"
+    "prompt-base": "^0.5.0"
   },
   "devDependencies": {
-    "enquirer": "^0.1.3",
+    "enquirer": "^0.3.1",
     "gulp-format-md": "^0.1.10"
   },
   "keywords": [
@@ -73,8 +73,8 @@
       "list": [
         "enquirer",
         "enquirer-prompt",
-        "enquirer-prompt-checkbox",
-        "enquirer-prompt-radio"
+        "prompt-checkbox",
+        "prompt-radio"
       ]
     },
     "reflinks": [
