@@ -3,7 +3,7 @@
  */
 
 var util = require('util');
-var Prompt = require('enquirer-prompt');
+var Prompt = require('prompt-base');
 var cyan = require('ansi-cyan');
 
 /**
@@ -12,17 +12,13 @@ var cyan = require('ansi-cyan');
 
 function Confirm(/*question, answers, rl*/) {
   Prompt.apply(this, arguments);
-  var initialDefault = true;
+  var defaultValue = true;
 
   if (typeof this.question.default === 'boolean') {
-    initialDefault = this.question.default;
+    defaultValue = this.question.default;
   }
 
-  this.filterFn = this.question.filter || function(input) {
-    return isString(input) ? isTrue(input) : initialDefault;
-  };
-
-  this.question.default = initialDefault ? 'Y/n' : 'y/N';
+  this.question.default = defaultValue ? 'Y/n' : 'y/N';
   return this;
 }
 
@@ -40,53 +36,37 @@ util.inherits(Confirm, Prompt);
 
 Confirm.prototype.ask = function(cb) {
   this.callback = cb;
-  this.ui.on('keypress', this.onKeypress.bind(this));
   this.ui.once('line', this.onSubmit.bind(this));
+  this.ui.on('keypress', this.onKeypress.bind(this));
   this.render();
   return this;
 };
 
 /**
- * Render the prompt to the terminal
+ * When user presses the `enter` key
  */
 
-Confirm.prototype.render = function(answer) {
-  var message = this.message;
-  if (typeof answer === 'boolean') {
-    message += cyan(answer ? 'Yes' : 'No');
-  } else {
-    message += this.rl.line;
-  }
-  this.ui.render(message);
-};
-
-/**
- * When user press `enter` key
- */
-
-Confirm.prototype.onSubmit = function(answer) {
-  this.answer = this.filterFn(answer);
+Confirm.prototype.onSubmit = function(input) {
+  this.answer = this.getAnswer(input);
   this.status = 'answered';
-  this.render(this.answer);
-  this.ui.write();
-  this.callback(this.answer);
+  this.submitAnswer();
 };
 
 /**
- * When user press a key
+ * When a keypress is emitted (user types)
+ */
+
+Confirm.prototype.getAnswer = function(input) {
+  return isString(input) ? isTrue(input) : this.question.default;
+};
+
+/**
+ * When a keypress is emitted (user types)
  */
 
 Confirm.prototype.onKeypress = function() {
   this.render();
 };
-
-/**
- * Return true if val is a non-empty string.
- */
-
-function isString(val) {
-  return val && typeof val === 'string';
-}
 
 /**
  * Return true if `str` is a truthy value.
@@ -95,7 +75,15 @@ function isString(val) {
  */
 
 function isTrue(str) {
-  return /^y|yes|ok|true$/i.test(str);
+  return /^(y|yes|ok|true)$/i.test(String(str));
+}
+
+/**
+ * Return true if val is a non-empty string.
+ */
+
+function isString(val) {
+  return val && typeof val === 'string';
 }
 
 /**
