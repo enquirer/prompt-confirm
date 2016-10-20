@@ -25,7 +25,8 @@
   },
   "devDependencies": {
     "enquirer": "^0.4.1",
-    "gulp-format-md": "^0.1.11"
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.1.2"
   },
   "keywords": [
     "answer",
