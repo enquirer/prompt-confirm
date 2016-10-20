@@ -1,10 +1,11 @@
-# prompt-confirm [![NPM version](https://img.shields.io/npm/v/prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/prompt-confirm) [![NPM downloads](https://img.shields.io/npm/dm/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm) 
+# prompt-confirm [![NPM version](https://img.shields.io/npm/v/prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/prompt-confirm) [![NPM downloads](https://img.shields.io/npm/dm/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm)
 
-> Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].
+> Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer](https://github.com/enquirer/enquirer).
 
 ![prompt-confirm example](https://raw.githubusercontent.com/enquirer/prompt-confirm/master/example.gif)
 
 ## Install
+
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
@@ -22,7 +23,7 @@ enquirer.register('confirm', require('prompt-confirm'));
 
 ## Example
 
-[Enquirer][] supports both the declarative inquirer-style question format and a functional format using the `.question` method:
+[Enquirer](https://github.com/enquirer/enquirer) supports both the declarative inquirer-style question format and a functional format using the `.question` method:
 
 **Single question**
 
@@ -88,13 +89,16 @@ enquirer.ask(questions)
 Based on the `confirm` prompt in inquirer.
 
 ## About
+
 ### Related projects
-- [enquirer-prompt](https://www.npmjs.com/package/enquirer-prompt): Base prompt module used for creating custom prompt types for Enquirer. | [homepage](https://github.com/jonschlinkert/enquirer-prompt "Base prompt module used for creating custom prompt types for Enquirer.")
-- [enquirer](https://www.npmjs.com/package/enquirer): Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all… [more](https://github.com/enquirer/enquirer) | [homepage](https://github.com/enquirer/enquirer "Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all the same prompt types and more, but without the bloat.")
-- [prompt-checkbox](https://www.npmjs.com/package/prompt-checkbox): Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer]. | [homepage](https://github.com/enquirer/prompt-checkbox "Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer].")
-- [prompt-radio](https://www.npmjs.com/package/prompt-radio): Radio prompt. This prompt behaves like other radio-button interfaces, where only one choice is enabled… [more](https://github.com/enquirer/prompt-radio) | [homepage](https://github.com/enquirer/prompt-radio "Radio prompt. This prompt behaves like other radio-button interfaces, where only one choice is enabled whilst all others are disabled. Can be used as a standalone prompt, or with a prompt system like [Enquirer].")
+
+* [enquirer-prompt](https://www.npmjs.com/package/enquirer-prompt): Base prompt module used for creating custom prompt types for Enquirer. | [homepage](https://github.com/jonschlinkert/enquirer-prompt "Base prompt module used for creating custom prompt types for Enquirer.")
+* [enquirer](https://www.npmjs.com/package/enquirer): Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all… [more](https://github.com/enquirer/enquirer) | [homepage](https://github.com/enquirer/enquirer "Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all the same prompt types and more, but without the bloat.")
+* [prompt-checkbox](https://www.npmjs.com/package/prompt-checkbox): Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer](https://github.com/enquirer/enquirer). | [homepage](https://github.com/enquirer/prompt-checkbox "Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer].")
+* [prompt-radio](https://www.npmjs.com/package/prompt-radio): Radio prompt. This prompt behaves like other radio-button interfaces, where only one choice is enabled… [more](https://github.com/enquirer/prompt-radio) | [homepage](https://github.com/enquirer/prompt-radio "Radio prompt. This prompt behaves like other radio-button interfaces, where only one choice is enabled whilst all others are disabled. Can be used as a standalone prompt, or with a prompt system like [Enquirer].")
 
 ### Contributing
+
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
 
 ### Running tests
@@ -106,19 +110,17 @@ $ npm install -d && npm test
 ```
 
 ### Author
+
 **Jon Schlinkert**
 
-+ [github/jonschlinkert](https://github.com/jonschlinkert)
-+ [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
+* [github/jonschlinkert](https://github.com/jonschlinkert)
+* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
 
 ### License
+
 Copyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).
-Released under the [MIT license](https://github.com/enquirer/prompt-confirm/blob/master/LICENSE).
+Released under the [MIT license](LICENSE).
 
 ***
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.1.31, on October 13, 2016._
-
-[enquirer]: https://github.com/enquirer/enquirer
-[verb-generate-readme]: https://github.com/verbose/verb-generate-readme
-[verb]: https://github.com/verbose/verb
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.2.0, on October 20, 2016._
