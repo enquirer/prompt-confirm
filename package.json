@@ -24,8 +24,8 @@
     "prompt-base": "^0.5.0"
   },
   "devDependencies": {
-    "enquirer": "^0.3.1",
-    "gulp-format-md": "^0.1.10"
+    "enquirer": "^0.4.1",
+    "gulp-format-md": "^0.1.11"
   },
   "keywords": [
     "answer",
