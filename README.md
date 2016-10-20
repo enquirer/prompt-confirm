@@ -1,4 +1,4 @@
-# prompt-confirm [![NPM version](https://img.shields.io/npm/v/prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/prompt-confirm) [![NPM downloads](https://img.shields.io/npm/dm/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm)
+# prompt-confirm [![NPM version](https://img.shields.io/npm/v/prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/prompt-confirm) [![NPM downloads](https://img.shields.io/npm/dm/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm) [![Linux Build Status](https://img.shields.io/travis/enquirer/prompt-confirm.svg?style=flat&label=Travis)](https://travis-ci.org/enquirer/prompt-confirm) [![Windows Build Status](https://img.shields.io/appveyor/ci/enquirer/prompt-confirm.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/enquirer/prompt-confirm)
 
 > Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer](https://github.com/enquirer/enquirer).
 
