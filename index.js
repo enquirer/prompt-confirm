@@ -12,12 +12,12 @@ var cyan = require('ansi-cyan');
 
 function Confirm(/*question, answers, rl*/) {
   Prompt.apply(this, arguments);
-  var defaultValue = true;
+  this.defaultValue = true
 
   if (typeof this.question.default === 'boolean') {
-    defaultValue = this.question.default;
+    this.defaultValue = this.question.default;
   }
-  this.question.default = defaultValue ? 'Y/n' : 'y/N';
+  this.question.default = this.defaultValue ? 'Y/n' : 'y/N';
   return this;
 }
 
@@ -56,7 +56,7 @@ Confirm.prototype.onSubmit = function(input) {
  */
 
 Confirm.prototype.getAnswer = function(input) {
-  return !!(isString(input) ? isTrue(input) : this.question.default);
+  return isString(input) ? isTrue(input) : this.defaultValue
 };
 
 /**
@@ -82,7 +82,7 @@ function isTrue(str) {
  */
 
 function isString(val) {
-  return val && typeof val === 'string';
+  return typeof val === 'string' && val.length > 0
 }
 
 /**
