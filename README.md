@@ -1,4 +1,4 @@
-# prompt-confirm [![NPM version](https://img.shields.io/npm/v/prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/prompt-confirm) [![NPM downloads](https://img.shields.io/npm/dm/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm) [![Linux Build Status](https://img.shields.io/travis/enquirer/prompt-confirm.svg?style=flat&label=Travis)](https://travis-ci.org/enquirer/prompt-confirm) [![Windows Build Status](https://img.shields.io/appveyor/ci/enquirer/prompt-confirm.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/enquirer/prompt-confirm)
+# prompt-confirm [![NPM version](https://img.shields.io/npm/v/prompt-confirm.svg?style=flat)](https://www.npmjs.com/package/prompt-confirm) [![NPM monthly downloads](https://img.shields.io/npm/dm/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm) [![NPM total downloads](https://img.shields.io/npm/dt/prompt-confirm.svg?style=flat)](https://npmjs.org/package/prompt-confirm) [![Linux Build Status](https://img.shields.io/travis/enquirer/prompt-confirm.svg?style=flat&label=Travis)](https://travis-ci.org/enquirer/prompt-confirm) [![Windows Build Status](https://img.shields.io/appveyor/ci/enquirer/prompt-confirm.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/enquirer/prompt-confirm)
 
 > Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer](https://github.com/enquirer/enquirer).
 
@@ -14,6 +14,41 @@ $ npm install --save prompt-confirm
 
 ## Usage
 
+**Question**
+
+Pass a string or question object to the constructor:
+
+```js
+var Prompt = require('prompt-confirm');
+var prompt = new Prompt('Do you like chocolate?');
+
+// or
+var prompt = new Prompt({
+  name: 'chocolate', 
+  message: 'Do you like chocolate?'
+});
+```
+
+**Run the prompt**
+
+You can use one of the following two methods for running the prompt:
+)
+
+```js
+// async
+prompt.ask(function(answer) {
+  console.log(answer);
+});
+
+// or promise
+prompt.run()
+  .then(function(answer) {
+    console.log(answer);
+  });
+```
+
+## Usage with [enquirer](https://github.com/enquirer/enquirer)
+
 ```js
 var Enquirer = require('enquirer');
 var enquirer = new Enquirer();
@@ -21,61 +56,26 @@ var enquirer = new Enquirer();
 enquirer.register('confirm', require('prompt-confirm'));
 ```
 
-## Example
+### Enquirer example
 
-[Enquirer](https://github.com/enquirer/enquirer) supports both the declarative inquirer-style question format and a functional format using the `.question` method:
-
-**Single question**
-
-Ask one question using the `.prompt` method:
-
-```js
-var Enquirer = require('enquirer');
-var enquirer = new Enquirer();
-
-enquirer.register('checkbox', require('prompt-confirm'));
-
-enquirer.question('chocolate', 'Like chocolate?', {type: 'confirm'});
-enquirer.question('vanilla', 'Like vanilla?', {type: 'confirm'});
-
-enquirer.prompt('vanilla')
-  .then(function(answers) {
-    console.log(answers)
-  });
-```
-
-**Functional**
-
-Functional style questions.
-
-```js
-var Enquirer = require('enquirer');
-var enquirer = new Enquirer();
-
-enquirer.register('checkbox', require('prompt-confirm'));
-
-enquirer.question('chocolate', 'Like chocolate?', {type: 'confirm'});
-enquirer.question('vanilla', 'Like vanilla?', {type: 'confirm'});
-
-enquirer.ask(['chocolate', 'vanilla'])
-  .then(function(answers) {
-    console.log(answers)
-  });
-```
+[Enquirer](https://github.com/enquirer/enquirer) supports either the declarative object-oriented (inquirer-style) question format or a more expressive format using the `.question` method.
 
 **Declarative**
 
-Inquirer-style questions format.
+Inquirer-style declarative format (takes an array or object):
 
 ```js
-var Enquirer = require('enquirer');
-var enquirer = new Enquirer();
-
-enquirer.register('checkbox', require('prompt-confirm'));
-
 var questions = [
-  {type: 'confirm', name: 'chocolate', message: 'Like chocolate?'},
-  {type: 'confirm', name: 'vanilla', message: 'Like vanilla?'}
+  {
+    type: 'confirm',
+    name: 'chocolate',
+    message: 'Like chocolate?'
+  },
+  {
+    type: 'confirm',
+    name: 'vanilla',
+    message: 'Like vanilla?'
+  }
 ];
 
 enquirer.ask(questions)
@@ -84,9 +84,20 @@ enquirer.ask(questions)
   });
 ```
 
-## Attribution
+**Expressive**
 
-Based on the `confirm` prompt in inquirer.
+Pre-define questions and easily compose prompts by passing the name(s) of the prompts to run:
+
+```js
+enquirer.question('chocolate', 'Like chocolate?', {type: 'confirm'});
+enquirer.question('vanilla', 'Like vanilla?', {type: 'confirm'});
+
+enquirer
+  .prompt(['chocolate', 'vanilla'])
+  .then(function(answers) {
+    console.log(answers)
+  });
+```
 
 ## About
 
@@ -103,10 +114,10 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 ### Running tests
 
-Install dev dependencies:
+Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
 
 ```sh
-$ npm install -d && npm test
+$ npm install && npm test
 ```
 
 ### Author
@@ -114,13 +125,13 @@ $ npm install -d && npm test
 **Jon Schlinkert**
 
 * [github/jonschlinkert](https://github.com/jonschlinkert)
-* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
+* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)
 
 ### License
 
-Copyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).
-Released under the [MIT license](LICENSE).
+Copyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).
+Released under the [MIT License](LICENSE).
 
 ***
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.2.0, on October 20, 2016._
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 21, 2017._
