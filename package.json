@@ -18,20 +18,19 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=5.0"
   },
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
-    "debug": "^2.6.6",
-    "koalas": "^1.0.2",
-    "prompt-base": "^0.8.2"
+    "debug": "^2.6.8",
+    "prompt-base": "^1.0.2"
   },
   "devDependencies": {
     "enquirer": "^0.4.1",
-    "gulp-format-md": "^0.1.11",
-    "mocha": "^3.1.2"
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.4.1"
   },
   "keywords": [
     "answer",

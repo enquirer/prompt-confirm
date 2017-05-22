@@ -2,7 +2,6 @@
  * `confirm` type prompt
  */
 
-var koalas = require('koalas');
 var debug = require('debug')('prompt-confirm');
 var Prompt = require('prompt-base');
 
@@ -13,10 +12,9 @@ var Prompt = require('prompt-base');
 function Confirm(/*question, answers, rl*/) {
   debug('initializing from <%s>', __filename);
   Prompt.apply(this, arguments);
-  this.setDefault();
-  this.validate = function() {
-    return true;
-  };
+
+  this.initialDefault = this.question.default !== false;
+  this.question.default = this.initialDefault ? 'Y/n' : 'y/N';
 }
 
 /**
@@ -26,40 +24,18 @@ function Confirm(/*question, answers, rl*/) {
 Prompt.extend(Confirm);
 
 /**
- * Get the default value to use
- */
-
-Confirm.prototype.setDefault = function() {
-  var val = koalas(this.question.getAnswer(), this.question.default, true);
-  this.question.default = val ? 'Y/n' : 'y/N';
-  this.defaultValue = val;
-};
-
-/**
- * Get the answer to use
- */
-
-Confirm.prototype.getAnswer = function(input) {
-  return isString(input) ? isTrue(input) : koalas(input, this.defaultValue);
-};
-
-/**
- * Return true if `str` is a truthy value.
- * @param {String} `str`
+ * Get the answer to use. Returns true if `input` is a truthy value.
+ * @param {String} `input`
  * @return {Boolean}
  */
 
-function isTrue(str) {
-  return /^(y|ye(s|ah)|ok(ay)?|true)$/i.test(String(str));
-}
-
-/**
- * Return true if val is a non-empty string.
- */
-
-function isString(val) {
-  return val && typeof val === 'string';
-}
+Confirm.prototype.getAnswer = function(input) {
+  this.status = 'pending';
+  if (input != null && input !== '') {
+    return /^(y|ye(ah|p|s)|ok(ay)?|true)$/i.test(String(input));
+  }
+  return this.initialDefault;
+};
 
 /**
  * Module exports
