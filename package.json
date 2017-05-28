@@ -25,12 +25,12 @@
   },
   "dependencies": {
     "debug": "^2.6.8",
-    "prompt-base": "^1.0.2"
+    "prompt-base": "^2.2.0"
   },
   "devDependencies": {
-    "enquirer": "^0.4.1",
+    "enquirer": "^1.0.2",
     "gulp-format-md": "^0.1.12",
-    "mocha": "^3.4.1"
+    "mocha": "^3.4.2"
   },
   "keywords": [
     "answer",
