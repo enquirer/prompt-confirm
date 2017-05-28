@@ -12,7 +12,6 @@ var Prompt = require('prompt-base');
 function Confirm(/*question, answers, rl*/) {
   debug('initializing from <%s>', __filename);
   Prompt.apply(this, arguments);
-
   this.initialDefault = this.question.default !== false;
   this.question.default = this.initialDefault ? 'Y/n' : 'y/N';
 }
@@ -32,9 +31,11 @@ Prompt.extend(Confirm);
 Confirm.prototype.getAnswer = function(input) {
   this.status = 'pending';
   if (input != null && input !== '') {
-    return /^(y|ye(ah|p|s)|ok(ay)?|true)$/i.test(String(input));
+    this.answer = /^(y(es)?|true)$/i.test(String(input));
+  } else {
+    this.answer = this.initialDefault;
   }
-  return this.initialDefault;
+  return this.answer;
 };
 
 /**
