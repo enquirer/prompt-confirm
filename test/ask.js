@@ -18,11 +18,12 @@ describe('.ask', function() {
 
   it('should default to true', function(cb) {
     prompt.ask(function(answer) {
-      assert.equal(prompt.question.default, 'Y/n');
       assert.equal(answer, true);
+      assert.equal(prompt.question.default, 'Y/n');
       cb();
     });
 
+    assert.equal(prompt.question.default, 'Y/n');
     prompt.rl.emit('line');
   });
 });
