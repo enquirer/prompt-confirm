@@ -1,7 +1,7 @@
 {
   "name": "prompt-confirm",
   "description": "Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "homepage": "https://github.com/enquirer/prompt-confirm",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
@@ -25,11 +25,11 @@
   },
   "dependencies": {
     "debug": "^2.6.8",
-    "prompt-base": "^3.0.4"
+    "prompt-base": "^4.0.1"
   },
   "devDependencies": {
     "enquirer": "^1.0.2",
-    "gulp-format-md": "^0.1.12",
+    "gulp-format-md": "^1.0.0",
     "mocha": "^3.4.2"
   },
   "keywords": [
