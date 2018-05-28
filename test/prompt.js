@@ -1,9 +1,8 @@
 'use strict';
 
 require('mocha');
-var assert = require('assert');
-var Prompt = require('..');
-var prompt;
+const assert = require('assert');
+const Prompt = require('..');
 
 describe('prompt-confirm', function() {
   it('should export a function', function() {
@@ -11,7 +10,7 @@ describe('prompt-confirm', function() {
   });
 
   it('should intantiate', function() {
-    var prompt = new Prompt({name: 'foo'});
+    const prompt = new Prompt({name: 'foo'});
     assert(prompt instanceof Prompt);
   });
 

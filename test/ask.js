@@ -1,10 +1,10 @@
 'use strict';
 
 require('mocha');
-var assert = require('assert');
-var Prompt = require('..');
-var prompt;
-var unmute;
+const assert = require('assert');
+const Prompt = require('..');
+let prompt;
+let unmute;
 
 describe('.ask', function() {
   beforeEach(function() {

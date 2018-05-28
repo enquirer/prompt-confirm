@@ -1,17 +1,13 @@
-/**
- * `confirm` type prompt
- */
+'use strict';
 
-var debug = require('debug')('prompt-confirm');
-var Prompt = require('prompt-base');
-var cyan = require('ansi-cyan');
+const Prompt = require('prompt-base');
+const cyan = require('ansi-cyan');
 
 /**
  * Create a new `Confirm` prompt, with the given `question`.
  */
 
 function Confirm(/*question, answers, rl*/) {
-  debug('initializing from <%s>', __filename);
   Prompt.apply(this, arguments);
 
   this.originalDefault = this.question.default !== false;
@@ -29,6 +25,7 @@ Prompt.extend(Confirm);
  * Render final selected answer when "line" ("enter" keypress)
  * is emitted
  */
+
 Confirm.prototype.renderAnswer = function() {
   return cyan(this.getAnswer() ? 'Yes' : 'No');
 };
