@@ -1,7 +1,7 @@
 {
   "name": "prompt-confirm",
   "description": "Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/enquirer/prompt-confirm",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
