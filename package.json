@@ -18,20 +18,19 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=5.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
     "ansi-cyan": "^0.1.1",
-    "debug": "^2.6.8",
     "prompt-base": "^4.0.1"
   },
   "devDependencies": {
     "enquirer": "^1.0.2",
     "gulp-format-md": "^1.0.0",
-    "mocha": "^3.4.2"
+    "mocha": "^5.2.0"
   },
   "keywords": [
     "answer",
@@ -82,9 +81,7 @@
       ]
     },
     "reflinks": [
-      "enquirer",
-      "verb",
-      "verb-generate-readme"
+      "enquirer"
     ],
     "lint": {
       "reflinks": true
