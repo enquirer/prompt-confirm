@@ -4,6 +4,7 @@
 
 var debug = require('debug')('prompt-confirm');
 var Prompt = require('prompt-base');
+var cyan = require('ansi-cyan');
 
 /**
  * Create a new `Confirm` prompt, with the given `question`.
@@ -23,6 +24,14 @@ function Confirm(/*question, answers, rl*/) {
  */
 
 Prompt.extend(Confirm);
+
+/**
+ * Render final selected answer when "line" ("enter" keypress)
+ * is emitted
+ */
+Confirm.prototype.renderAnswer = function() {
+  return cyan(this.getAnswer() ? 'Yes' : 'No');
+};
 
 /**
  * Get the answer to use. Returns true if `input` is a truthy value.
