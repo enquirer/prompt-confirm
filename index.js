@@ -27,7 +27,7 @@ Prompt.extend(Confirm);
  */
 
 Confirm.prototype.renderAnswer = function() {
-  return cyan(this.getAnswer() ? 'Yes' : 'No');
+  return cyan(this.getAnswer(this.answer) ? 'Yes' : 'No');
 };
 
 /**
